@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css"
+        integrity="sha512-OQDNdI5rpnZ0BRhhJc+btbbtnxaj+LdQFeh0V9/igiEPDiWE2fG+ZsXl0JEH+bjXKPJ3zcXqNyP4/F/NegVdZg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <div class="side-menu">
+        <div class="brand-name">
+            <h1>MyBrand</h1>
+        </div>
+        <ul>
+            <li><i class="ri-dashboard-line"></i>&nbsp; <span>Dashboard</span> </li>
+            <li><a href="#user"><i class="ri-user-line"></i>&nbsp;<span>User</span> </a></li>
+            <li><a href="#message"><i class="ri-message-2-line"></i>&nbsp;<span>Message</span> </a></li>
+            <li><a href="#blog"><i class="fa-solid fa-blog"></i>&nbsp;<span>Blog</span> </a></li>
+            
+
+        </ul>
+    </div>
+    <div class="container">
+        <div class="header">
+            <div class="nav">
+                <div class="search">
+                    <input type="text" placeholder="Search..">
+                    <button type="submit"><img src="assets/search.png" alt=""></button>
+                </div>
+                <div class="user">
+                    <a href="#" class="btn">Add New</a>
+                    <img src="assets/notifications.png" alt="">
+                    <div class="img-case">
+                        <img src="assets/user.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <div class="cards">
+                <div class="card">
+                    <div class="box">
+                        <h1 id="userNumber">0</h1>
+                        <h3>User</h3>
+                    </div>
+                    <div class="icon-case">
+                        <img src="assets/students.png" alt="">
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="box">
+                        <h1>0</h1>
+                        <h3>Messages</h3>
+                    </div>
+                    <div class="icon-case">
+                        <img src="assets/teachers.png" alt="">
+                    </div>
+                </div>
+
+            </div>
+            <div class="content-2" id="user">
+                <div class="recent-payments">
+                    <div class="title">
+                        <h2>Recent User</h2>
+                        <a href="#" class="btn">View All</a>
+                    </div>
+                    <table>
+                        <tr>
+                            <th>N<sup>0</sup></th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>option</th>
+                        </tr>
+                        <tbody id="user-content">
+
+                        </tbody>
+
+
+                    </table>
+                </div>
+
+            </div>
+        </div>
+        <div class="content-2" id="message">
+            <div class="recent-message">
+                <div class="title">
+                    <h2>Messages</h2>
+                    <a href="#" class="btn">View All</a>
+                </div>
+                <table>
+                    <tr>
+                        <th>N<sup>0</sup></th>
+                        <th>Name</th>
+                        <th>Message</th>
+                        <th>option</th>
+                    </tr>
+                    <tbody id="message-content">
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+        <div class="content-2" id="blog">
+            <div class="recent-blog">
+                <div class="title">
+                    <h2>Blogs</h2>
+                    <a href="#" class="btn">View All</a>
+                </div>
+                <div id="blogsContainer"> 
+                </div>
+                <button style="padding: 3px; background-color: #4040fcf0; width: 100px; height: 50px; font-size: 1.3em; color: white; border: none; border-radius: 3px;"><a href="./addblog.html">Add Blog</a></button>
+            </div>
+        </div>
+        
+    </div>
+    </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.8/axios.min.js"
+        integrity="sha512-PJa3oQSLWRB7wHZ7GQ/g+qyv6r4mbuhmiDb8BjSFZ8NZ2a42oTtAq5n0ucWAwcQDlikAtkub+tPVCw4np27WCg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="index.js"></script>
+    <script src="messages.js"></script> 
+    <script src="blogs.js"></script>
+    <script src="/app.js"></script>
+</body>
+
+</html>

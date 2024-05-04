@@ -1,0 +1,57 @@
+body{
+    background-color: #344a72;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+
+}
+
+.container-login{
+    width: 360px;
+    height: 350px;
+    margin:  auto;
+    background-color: white;
+    border-radius: 3px;
+}
+h1{
+    text-align: center;
+padding-top: 15px;
+}
+h4{
+    text-align: center;
+}
+.formAdm{
+    width: 320px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.formAdm label{
+    display: flex;
+    font-size: 15px;
+    margin-top: 15px;
+}
+.formAdm input{
+    width: 100%;
+    padding: 6px;
+    border: none;
+    border: 1px solid gray;
+    border-radius: 5px;
+}
+button{
+    width: 330px;
+    margin-top: 25px;
+    height: 35px;
+    border: none;
+    background-color: #49c1a2;
+    font-size: 15px;
+    color: white;
+    border-radius: 5px;
+}
+
+.para-2{
+    text-align: center;
+    color: black;
+    font-size: 15px;
+    margin-top: 15px;
+}
+a{
+    text-decoration: none;
+}
