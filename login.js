@@ -80,20 +80,34 @@ form.addEventListener('submit',(e)=>{
 
 
 const login = async(email,password)=>{
-  const res = await axios({
-    method:"POST",
-    url:"https://mybrandbackend-93l8.onrender.com/api/users/login",
-    data:{password,email}
-  })
-  console.log(res);
-  localStorage.setItem("jwt",res.data.token)
-  localStorage.setItem("user",res.data.user)
-  if(res.data.user.role === "admin"){
-    window.location.href = "./dashboard.html"
+  try{
+    const res = await axios({
+      method:"POST",
+      url:"https://mybrandbackend-93l8.onrender.com/api/users/login",
+      data:{password,email}
+    })
+
+    if(res.data.status === 'fail'){
+      alert("incorrect email or password")
+      return;
+    }
+    console.log(res);
+    localStorage.setItem("jwt",res.data.token)
+    localStorage.setItem("user",res.data.user)
+    if(res.data.user.role === "admin"){
+      window.location.href = "./dashboard.html"
+    }
+    else if(res.data.user.role === "user"){
+      alert('only admin can login')
+      return;
+    }
+  }catch(err){
+    console.dir(err);
+    alert(err.response.data.message)
   }
-  else if(res.data.user.role === "user"){
-    window.location.href = "index.html"
-  }
+  
+  
+  
 };
 
 subm.addEventListener('click',()=>{
@@ -101,6 +115,10 @@ subm.addEventListener('click',()=>{
     const loginEmail= document.getElementById('email').value
     const loginPassword = document.getElementById('password').value
     console.log(loginEmail,loginPassword);
+    if(loginEmail===''||loginPassword ===''){
+      alert('Please add email or password')
+      return;
+    }
   login(loginEmail,loginPassword)
   
 });
