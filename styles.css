@@ -93,9 +93,12 @@ td {
     width: 80vw;
     height: 100vh;
     background: #f1f1f1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.container .header {
+ .header {
     position: fixed;
     top: 0;
     right: 0;
@@ -109,26 +112,26 @@ td {
     z-index: 1;
 }
 
-.container .header .nav {
+ .header .nav {
     width: 90%;
     display: flex;
     align-items: center;
 }
 
-.container .header .nav .search {
+ .header .nav .search {
     flex: 3;
     display: flex;
     justify-content: center;
 }
 
-.container .header .nav .search input[type=text] {
+.header .nav .search input[type=text] {
     border: none;
     background: #f1f1f1;
     padding: 10px;
     width: 50%;
 }
 
-.container .header .nav .search button {
+.header .nav .search button {
     width: 40px;
     height: 40px;
     border: none;
@@ -136,31 +139,30 @@ td {
     align-items: center;
     justify-content: center;
 }
-
-.container .header .nav .search button img {
+ .header .nav .search button img {
     width: 30px;
     height: 30px;
 }
 
-.container .header .nav .user {
+.header .nav .user {
     flex: 1;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.container .header .nav .user img {
+.header .nav .user img {
     width: 40px;
     height: 40px;
 }
 
-.container .header .nav .user .img-case {
+.header .nav .user .img-case {
     position: relative;
     width: 50px;
     height: 50px;
 }
 
-.container .header .nav .user .img-case img {
+.header .nav .user .img-case img {
     position: absolute;
     top: 0;
     left: 0;
@@ -384,6 +386,9 @@ td {
     display: flex;
     flex-wrap: wrap;
 }
+#blog, #message{
+    display: none;
+}
 
 .blog-card {
     display: flex;
@@ -431,4 +436,31 @@ td {
 
 .btn.read-more:hover {
     background-color: #0056b3;
+}
+.loading-spinner {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(255, 255, 255);
+    z-index: 9999;
+}
+
+.loading-spinner img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.loading-spinner p{
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 20px;
+    font-weight: 700;
+    color: rgb(26, 132, 156);
+    text-align: center;
 }

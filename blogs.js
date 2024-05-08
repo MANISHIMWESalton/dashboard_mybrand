@@ -1,6 +1,8 @@
 const fetchBlogs = async () => {
+    showLoading()
     try {
         const res = await axios.get("https://mybrandbackend-93l8.onrender.com/api/blog");
+        if (res.status === 200) {
         const blogs = res.data.data.Blogs;
         const blogContainer = document.getElementById("blogsContainer"); 
         blogContainer.innerHTML = ""; 
@@ -26,6 +28,7 @@ const fetchBlogs = async () => {
                 await deleteBlog(blogId, authToken);
             });
         });
+    }
     } catch (error) {
         console.error("Error fetching blogs:", error);
     }
@@ -38,16 +41,20 @@ async function displayBlogs() {
 document.addEventListener("DOMContentLoaded", displayBlogs);
 
 const deleteBlog = async (blogId, authToken) => {
+    showLoading();
     try {
         const res = await axios({
             method: "DELETE",
             url: `https://mybrandbackend-93l8.onrender.com/api/blog/${blogId}`,
             headers: { Authorization: `Bearer ${authToken}` },
         });
-        console.log(res.data);
-        setTimeout(() => {
-            window.location.reload();
-        }, 2000);
+       if (res.status === 200) {
+        hideLoading();
+        const row = document.querySelector(`button[data-blog-id = ${blogId}]`).closest('tr')
+        if(row){
+            row.remove();
+        }
+    }
     } catch (error) {
         console.error("Error deleting blog:", error);
     }

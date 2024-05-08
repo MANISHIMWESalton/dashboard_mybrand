@@ -18,30 +18,38 @@
             <h1>MyBrand</h1>
         </div>
         <ul>
-            <li><i class="ri-dashboard-line"></i>&nbsp; <span>Dashboard</span> </li>
-            <li><a href="#message"><i class="ri-message-2-line"></i>&nbsp;<span>Message</span> </a></li>
-            <li><a href="#blog"><i class="fa-solid fa-blog"></i>&nbsp;<span>Blog</span> </a></li>
+            <li id="dashboardBtn"><i class="ri-dashboard-line"></i>&nbsp; <span>Dashboard</span> </li>
+            <li id="messageBtn"><a href="#"><i class="ri-message-2-line"></i>&nbsp;<span>Message</span> </a></li>
+            <li id="blogBtn"> <a href="#"><i class="ri-blogger-line"></i>&nbsp;<span>Blog</span> </a></li>
             
 
         </ul>
     </div>
-    <div class="container">
-        <div class="header">
-            <div class="nav">
-                <div class="search">
-                    <input type="text" placeholder="Search..">
-                    <button type="submit"><img src="images/search.png" alt=""></button>
-                </div>
-                <div class="user">
-                    <a href="#" class="btn">Add New</a>
-                    <img src="images/notifications.png" alt="">
-                    <div class="img-case">
-                        <img src="images/user.png" alt="">
-                    </div>
+    <div class="header">
+        <div class="nav">
+            <div class="search">
+                <input type="text" placeholder="Search..">
+                <button type="submit"><img src="images/search.png" alt=""></button>
+            </div>
+            <div class="user">
+                <a href="#" class="btn">Add New</a>
+                <img src="images/notifications.png" alt="">
+                <div class="img-case">
+                    <img src="images/user.png" alt="">
                 </div>
             </div>
         </div>
-        
+        <div class="loading-spinner" id="loading-spinner">
+            <img src="./images/Spinner-2.gif" alt="Loading Spinner">
+            <p>Please wait.....</p>
+           
+        </div>
+    </div>
+    <div class="container">
+        <div class="content-2" id="dashboard">
+            <p>welcome to my brand Dashboard.</p>
+            <p>Navigete to side bar and get content</p>
+        </div>
         <div class="content-2" id="message">
             <div class="recent-message">
                 <div class="title">
