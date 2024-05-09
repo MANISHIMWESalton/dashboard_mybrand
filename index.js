@@ -97,4 +97,15 @@ dashboardContent.addEventListener('click',() => {
     message.style.display = 'none';
     dashboard.style.display = 'block';
 });
-// document.addEventListener("DOMContentLoaded", displayData);
+
+function logout() {
+    localStorage.removeItem('jwt')
+    window.location.href = './index.html'
+}
+
+document.addEventListener("DOMContentLoaded", ()=>{
+    const token = localStorage.getItem('jwt')
+    if(!token){
+        window.location.href = './index.html'
+    }
+})
